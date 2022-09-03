@@ -1,0 +1,243 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Grid*/
+
+header {
+    grid-area: header;
+    background-color: rgb(88, 1, 105);
+}
+
+header > ul.menu-lateral {
+    display: none;       
+}
+
+section {
+    grid-area: section;
+    display: grid;
+    grid-template-columns: auto;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding: 30px;
+}
+
+#filtros {
+    grid-area: filtros;
+    background-color: rgba(194, 184, 184, 0.481);
+    text-align: center;
+}
+
+#paginas {
+    grid-area: paginas;
+}
+
+footer {
+    grid-area: footer;
+    background-color: rgb(53, 8, 62);
+}
+
+main {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas:    'header'
+                            'filtros'
+                            'section'
+                            'paginas'
+                            'footer';
+    grid-template-rows: 50px 50px auto auto 60px;
+}
+/*Grid*/
+
+
+/*menu ordenrar filtros*/
+
+#filtros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*menu ordenrar filtros*/
+
+/*header*/
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    color: white;
+}
+
+#menu div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+#menu div h1 {
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.menu-lateral > li {
+    height: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/*header*/
+
+
+/*Contenido Section*/
+
+img {
+    width: 60%;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+article > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-ocultos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* id article para ocultar imagenes en verión movil*/
+.img-ocultos {
+    display: none;
+}
+/* id article para ocultar imagenes en verión movil*/
+
+#img-visible-siempre {
+    border: 1px solid;
+    border-color: rgb(201, 198, 193);
+}
+
+.img-ocultos {
+    border: 1px solid;
+    border-color: rgb(201, 198, 193);
+}
+
+.text a {
+    border: 1px solid;
+    border-radius: 8%;
+    padding: 10px 20px;
+    background-color: rgb(88, 1, 105);
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#paginas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+#paginas li {
+    border: 1px solid;
+    border-radius: 10%;
+    border-color: rgb(80, 58, 85);
+    padding: 10px;
+    color: rgb(46, 8, 54);
+    cursor: pointer;
+}
+
+/*Contenido Section*/
+
+/*Media Queries*/
+
+@media screen and (min-width: 576px) {
+    main {
+        grid-template-areas:    'header filtros'
+                                'header section'
+                                'header section'
+                                'footer section'
+                                'footer paginas';
+        grid-template-columns: 200px auto;
+        grid-template-rows: 50px auto 60px 60px 90px;
+    }
+
+    header > ul.menu-lateral {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 577px) {
+    section {
+        grid-template-columns: auto;
+    }    
+    #menu > i {
+        display: none;
+    }
+
+    .img-ocultos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media screen and (min-width: 992px) {
+        section {
+            grid-template-columns: auto auto; 
+        }    
+    }
+
+    @media screen and (min-width: 1200px) {
+        section {
+            grid-template-columns: auto auto auto auto;  
+        }
+    }
+}
+
+/*Media Queries*/
+
+/*footer*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+footer p {
+    text-align: center;
+    padding-top: 10px;
+}
+
+footer i {
+    cursor: pointer;
+    font-size: 20px;
+}
+/*footer*/
+
+
+
